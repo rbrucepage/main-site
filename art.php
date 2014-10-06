@@ -84,7 +84,6 @@
 		
 		<?php include ("includes/portfolio-art.php"); ?>
 		
-		
 		<div class="three columns port-links porfolioRightNav">
 				<?php include ("includes/portrightnav.php"); ?>
 		</div>
