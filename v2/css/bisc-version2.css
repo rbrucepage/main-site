@@ -1,0 +1,469 @@
+@charset "UTF-8";
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 1.5;
+	background-image: url(../images/bisc-2-bg-pattern.jpg);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+
+/*
+//////////////////////////////
+TAG SELECTORS
+//////////////////////////////
+ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img {
+	border: none;
+}
+h2 {
+	font-size:130%;
+	color:#125895;
+}
+h3 {
+	font-size:93%;
+}
+p {
+	font-size:90%;
+	color:#797979;
+}
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+/* ////////// hover nav //////////*/
+.fadehover {
+	position: relative;
+	}
+ 
+img.a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	}
+ 
+img.b {
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+/* ////////// hover nav //////////*/
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+/*img.main-nav-align{
+	top: 77px;
+}*/
+nav li.home a {
+	width:88px;
+	height:24px;
+	/*height:101px;*/
+	/*background: url(../images/home-button-slippers.png) no-repeat;*/
+}
+nav li.portfolio a {
+	width:87px;
+	height:24px;
+	/*height:101px;
+	background: url(../images/portfolio-button-case.png) no-repeat;*/
+}
+nav li.resume a {
+	width:87px;
+	height:24px;
+	/*height:101px;
+	background: url(../images/resume-button-doc.png) no-repeat;*/
+}
+nav li.about-me a {
+	width:88px;
+	height:24px;
+	/*height:101px;
+	background: url(../images/about-me-frame.png) no-repeat;*/
+}
+nav li.contact-me a {
+	width:88px;
+	height:24px;
+	/*height:101px;
+	background: url(../images/contact-me-button-mail.png) no-repeat;*/
+}
+nav li.return a {
+	width:88px;
+	height:24px;
+}
+nav img.active {display:none;}
+
+/*
+//////////////////////////////
+CONTAINERS
+//////////////////////////////
+ */
+.container {
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	width: 960px;
+	padding-bottom:10px;
+}
+header {
+	background: url(../images/bisc-2-topshadow.png) repeat-x bottom;
+	width:960;
+	display:block;
+	padding:10px 0 10px;
+	margin:0;
+}
+nav {
+	display:block;
+	margin:0;
+	padding-bottom:150px;
+}
+.home-page nav {
+	padding-bottom:200px;
+}
+
+/* ~~ This is the layout information. ~~ 
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+*/
+.center {
+	background: #FFF url(../images/blue-wave-home.png) no-repeat center 92px;
+	display: block;
+}
+.content {
+	padding: 0;
+	width: 730px;
+	float: left;
+}
+aside {
+	float: right;
+	width: 214px;
+	height: 548px;
+	background: url(../images/spray-bottle-home.png) no-repeat;
+	margin-top: -20px;
+	margin-bottom: -60px;
+}
+form li .col_field input, form li .col_field textarea {
+	border:none;
+	background-color:#f5f5f5;
+	border-radius: 16px;
+	padding:6px 10px;
+	margin:7px 0;
+	color:#797979;
+	-webkit-box-shadow: 0px 1px #d3d3d3;
+	-moz-box-shadow: 0px 1px #d3d3d3;
+	box-shadow: 0px 1px #d3d3d3;
+	filter:progid:DXImageTransform.Microsoft.DropShadow(color='#d3d3d3',offX='1',offY='1');
+	text-shadow: 0px 1px #FFF;
+	font: 128%/1.5 Helvetica, Arial, sans-serif;
+	-webkit-appearance: none;
+}
+form li .form_submit_block input.form_button {
+	padding:6px 20px;
+	margin:0;
+	background-image: linear-gradient(bottom, rgb(53,136,191) 29%, rgb(38,98,166) 83%);
+	background-image: -o-linear-gradient(bottom, rgb(53,136,191) 29%, rgb(38,98,166) 83%);
+	background-image: -moz-linear-gradient(bottom, rgb(53,136,191) 29%, rgb(38,98,166) 83%);
+	background-image: -webkit-linear-gradient(bottom, rgb(53,136,191) 29%, rgb(38,98,166) 83%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.29, rgb(53,136,191)), color-stop(0.83, rgb(38,98,166)));
+	background-image: -ms-linear-gradient(bottom, rgb(53,136,191) 29%, rgb(38,98,166) 83%);
+	/* For Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#2662a6, endColorstr=#3588bf);
+    /* For Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#2662a6, endColorstr=#3588bf)";    
+    background-color: #125895; 
+	color:#fff;
+	font: 128%/1.3 Helvetica, Arial, sans-serif;
+	text-shadow: 0px 1px #000;
+	box-shadow: 0px 1px #000;
+	filter:progid:DXImageTransform.Microsoft.DropShadow(color='#000000',offX='1',offY='1');
+	border-radius: 8px;
+	vertical-align:middle;
+}
+form li .form_submit_block input[type="submit"] {
+	cursor:pointer;
+}
+form li .form_submit_block input[type="submit"]:hover {
+	background-color:#2b6bb3;
+	background-image: linear-gradient(bottom, rgb(38,98,166) 29%, rgb(53,136,191) 83%);
+	background-image: -o-linear-gradient(bottom, rgb(38,98,166) 29%, rgb(53,136,191) 83%);
+	background-image: -moz-linear-gradient(bottom, rgb(38,98,166) 29%, rgb(53,136,191) 83%);
+	background-image: -webkit-linear-gradient(bottom, rgb(38,98,166) 29%, rgb(53,136,191) 83%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.29, rgb(38,98,166)), color-stop(0.83, rgb(53,136,191)));
+	background-image: -ms-linear-gradient(bottom, rgb(38,98,166) 29%, rgb(53,136,191) 83%);
+}
+.about-me-page aside {
+	background: url(../images/scoop-about-me.png) no-repeat;
+	margin-top:10px;
+}
+.contact-me-page aside {
+	background: url(../images/phone-contact-me.png) no-repeat;
+}
+.resume-page aside {
+	background: url(../images/resume-tools.png) no-repeat;
+}
+.portfolio-page aside {
+	background: url(../images/portfolio-bruce.png) no-repeat;
+}
+nav ul {
+	margin: 15px 0;
+	padding: 0px;
+}
+nav li {
+	list-style-type: none;
+	float: left;
+	margin: 0px 15px 0px 0px;
+	padding: 0px;
+}
+nav li a {
+	display: block;
+}
+nav li div {
+	text-align:center;
+	color:#ddd;
+	line-height:1;
+	font-size: 130%;
+	text-shadow: 0px -1px 0px #999;
+}
+.clean {
+	background-image: url(../images/crazy-clean.png);
+	background-repeat: no-repeat;
+	text-indent: -5000px;
+	height: 88px;
+	background-position: right;
+	margin: 0px 0 0;
+	line-height: 1;
+}
+.functional {
+	background-image: url(../images/crazy-functional.png);
+	background-repeat: no-repeat;
+	text-indent: -5000px;
+	margin: 0px;
+	height: 46px;
+	background-position: right;
+	line-height: 1;
+}
+article{
+	display:block;
+	margin-top: 0px;
+	padding-bottom:10px;
+}
+.article-top {
+	margin-top: 0px;
+}
+.spray-bottle {
+	margin-top: -20px;
+}
+.resume-page article li {
+	color:#797979;
+	margin-left:50px;
+	padding-bottom:12px;
+	font: 90% Helvetica, Arial, sans-serif;
+	margin-right: 30px;
+	line-height:1.4;
+}
+.ContentFlow img {
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.3)));
+	-moz-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.3)));
+	-o-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.3)));
+	box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.3)));
+	-webkit-box-shadow: 0px 0px 5px 2px #ababab;
+	-moz-box-shadow: 0px 0px 5px 2px #ababab;
+	-o-box-shadow: 0px 0px 5px 2px #ababab;
+	box-shadow: 0px 0px 5px 2px #ababab;
+}
+.html-resume  article {
+	width: 708px;
+	background: url(../images/resume-page-paper-bg.png) repeat-y;
+	margin: 0px 0px 20px;
+	padding: 0px;
+}
+.html-resume article h2, .html-resume article h3, .html-resume article h4, .html-resume article h5, .html-resume article p {
+	margin-right: 30px;
+	margin-left: 20px;
+}
+.html-resume .resume-header {
+	text-align: right;
+	float: right;
+	padding-top: 40px;
+}
+.html-resume article h1 {
+	background: url(../images/resume-page-paper-top.png) no-repeat;
+	height: 76px;
+	margin: 0px;
+	padding-top: 30px;
+	line-height: 1;
+	margin-bottom: 0px;
+}
+.html-resume article h3 {
+	font-weight: normal;
+	color: #666;
+	padding-top: 5px;
+}
+.html-resume article .summary h3 {
+	margin-top: 20px;
+	text-shadow: 0px -1px #FFF;
+	padding-left: 0px;
+}
+.html-resume article .summary p {
+	text-shadow: 0px -1px #FFF;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.html-resume article h3.categories {
+	color: #000;
+	font-weight: bold;
+	font-size: 80%;
+}
+.html-resume article .summary {
+	background: #f5f5f5;
+	margin: 30px auto;
+	width: 83%;
+	border: 1px dashed #ddd;
+}
+.html-resume article h4 {
+	border-top: 1px solid #ddd;
+	padding-top: 12px;
+	margin-top: 30px;
+	color: #125895;
+	font-size: 128%;
+	font-weight: normal;
+	line-height: 1;
+}
+.html-resume article h2.article-top {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 180%;
+	font-weight: normal;
+}
+.html-resume article .article-footer {
+	background: url(../images/resume-page-paper-bot.png) no-repeat center bottom;
+	height: 82px;
+	margin: 0px;
+	padding: 0px;
+}
+.resume-page  a {
+	text-decoration: none;
+	color: #62bafe;
+}
+.resume-page  a:hover {
+	text-decoration: underline;
+}
+
+/*
+//////////////////////////////
+FOOTER
+//////////////////////////////
+ */
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+footer {
+	padding: 20px 0 10px;
+	background: url(../images/bisc-2-botshadow.png) repeat-x top;
+	display:block;
+	width:960px;
+	margin: 0px;
+}
+footer p {
+	background: url(../images/more-ways-banner.png) no-repeat;
+	text-indent: -5000px;
+	margin: 0px;
+	height: 37px;
+	width: 200px;
+}
+ul.social li {
+	float: left;
+	margin-right: 10px;
+	list-style: none;
+	margin-top: 0;
+}
+ul.social li a {
+	display: block;
+}
+ul.social li.linkedin a {
+	width:37px;
+	height:28px;
+}
+ul.social li.facebook a {
+	width:37px;
+	height:28px;
+}
+ul.social li.twitter a {
+	width:37px;
+	height:28px;
+}
+ul.tool-box li {
+	float: right;
+	list-style: none;
+	margin: 0px 0px 0px 20px;
+	line-height:1;
+}
+.copyright {
+	font: .74em Helvetica, Arial, sans-serif;
+	line-height:1;
+	color: #aeaeae;
+	background: url(none);
+	margin: 12px 0px 13px;
+	text-shadow: 0px 2px #FFF;
+	height:auto;
+	text-align:right;
+	padding: 0px;
+	float: right;
+}
+.fadehover div {
+	display: none;
+}
+header .fb-like {
+	float: right;
+}
+
+/*
+//////////////////////////////
+FLOATS & CLEARS
+//////////////////////////////
+ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+}
+.zeroBot {
+	margin-bottom: 0px;
+}
+.zeroTop {
+	margin-top: 0px;
+}
+iframe {
+	border:0;
+}
+.resume-page article .summary p {
+	text-shadow: 0px 1px #FFF;
+}
+.resume-page article h5 {
+	font-weight: normal;
+	border: 1px dashed #ddd;
+	margin: 30px auto;
+	padding: 10px;
+	width: 80%;
+	color: #125895;
+}

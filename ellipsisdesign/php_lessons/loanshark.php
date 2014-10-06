@@ -1,0 +1,1 @@
+<html> <head> <title>Loans</title> </head> <body> <?php $interest_rate = .14; function YouOweMe($cost, $interest_rate) { $weekly_payment = ($cost*$interest_rate); print "You better pay me \$$weekly_payment every week, or else!"; } YouOweMe($cost, $interest_rate); ?> </body> </html>
